@@ -4,22 +4,40 @@
     <meta charset="UTF-8">
     <title>LifeSpot</title>
     <style>
-        /* Свойства стиля элемента.Подробнее о них в модуле по CSS */
-        .bordered {
-            border: 2px solid black;
-            background-color: azure;
-            padding: 10px;
-        }
-
+        /* Свойства стиля элемента. Подробнее о них в модуле по CSS */
         .video-container {
             display: inline-block;
+            padding-left: 1%;
         }
-        .footer {
-            border: 2px solid black;
-            background-color: azure;
-            padding: 10px;
+
+        .navbar {
+            color: darkgray;
+            padding-left: 15%;
+        }
+
+        header {
+            padding-left: 1%;
+        }
+
+        footer {
             position: absolute;
             bottom: 0;
+        }
+
+        aside {
+            height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
+            width: 10%;
+            position: absolute; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
+            z-index: 1; /* Сайд-бар будет поверх остальных элементов */
+            top: 0; /* Сайдбар будет в самой верхней части страницы */
+            left: 0;
+            background-color: #111; /* Черный цвет фона (задан в виде кода) */
+            overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
+            padding-top: 20px;
+        }
+
+        body {
+            padding-left: 11%;
         }
     </style>
 </head>
@@ -31,10 +49,18 @@
         </div>
     </header>
 
+    <!--Сайд-бар страницы-->
+    <aside id="sidebar">
+        <div class="navbar">
+            <p>Все трансляции</p>
+            <p>О проекте</p>
+        </div>
+    </aside>
+
     <!--<a href="https://www.youtube.com/watch?v=wCcMcaiRbhM"><button>Санкт- Петербург</button></a>
     <a href="https://www.youtube.com/watch?v=srlpC5tmhYs"><button>Нью-Йорк</button></a>
     <a href="https://www.youtube.com/watch?v=JplMzss6_YE"> <button>Лондон</button></a>-->
-    <div align ="center">
+    <div align="center">
         <div class="video-container"><h3 align="center" class="video-title">Санкт-Петербург, Невский Проспект</h3><iframe width="560" height="315" src="https://www.youtube.com/embed/wCcMcaiRbhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="video-container"><h3 align="center" class="video-title">Нью-Йорк, Брайант Парк</h3><iframe width="560" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="video-container"> <h3 align="center" class="video-title">Лондон, автобусный маршрут</h3><iframe width="560" height="315" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
