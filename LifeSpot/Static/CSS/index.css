@@ -9,13 +9,27 @@
     color: darkgray;
     padding-left: 15%;
 }
-.navbar p:hover {
-    color:gold;
+
+.navbar a{
+    color: #ffffff;
+    text-decoration:none;
 }
 
+.navbar p {
+    padding-left:15%;
+}
+
+.navbar p:hover {
+    color: gold;
+}
+/*Задание 27.4.4*/
+.bordered {
+    color:yellow;
+}
 header {
     padding-left: 1%;
     padding-top: 1.2%;
+    color:black;
 }
 
 footer {
