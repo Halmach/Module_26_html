@@ -24,7 +24,7 @@
 }
 /*Задание 27.4.4*/
 .bordered {
-    color:yellow;
+    color: black;
 }
 header {
     padding-left: 1%;
@@ -50,6 +50,10 @@ aside {
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
     padding-top: 2%;
     font-size: large;
+}
+/* Задание 27.5.3 */
+header, footer, .main-content, body {
+    background-color:#f7b6c0;
 }
 
 body {
