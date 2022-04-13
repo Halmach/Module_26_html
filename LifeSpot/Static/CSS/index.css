@@ -37,6 +37,8 @@ footer {
     bottom: 0;
     font-size: medium;
     color: dimgrey;
+    /* Задание 27.6.3 */
+    line-height: 66%;
 }
 
 aside {
