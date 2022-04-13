@@ -39,6 +39,7 @@ footer {
     color: dimgrey;
     /* Задание 27.6.3 */
     line-height: 66%;
+    padding-left: 8%; /* Задание 27.7.3*/
 }
 
 aside {
