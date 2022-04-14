@@ -42,6 +42,22 @@ footer {
     padding-left: 8%; /* Задание 27.7.3*/
 }
 
+.search {
+    text-align:center;
+}
+
+.searchTextBox {
+    height: 20px;
+    border: 1px solid #abadb3;
+}
+
+
+.searchTextBox:focus {
+    outline: 0; /* Универсальное решение, которое убирает подсветку во всех браузерах */
+    outline-offset: 0;
+    border: 1px solid #AEF26D;
+}
+
 aside {
     height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
     width: 10%;
