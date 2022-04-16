@@ -1,1 +1,2 @@
-﻿alert('Приветствуем на LifeSpot');
+﻿alert("Приветствуем на LifeSpot! " +
+    new Date().toLocaleString());
