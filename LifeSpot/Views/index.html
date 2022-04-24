@@ -18,7 +18,7 @@
             <form>
                 <p>
                     Поиск: <input class="searchTextBox" type="text" name="searchField" maxlength="255" size="25"
-                                  oninput="filterByVideoName()"/>
+                                  oninput="filterByVideoName(document.getElementsByTagName('input')[0].value.toLowerCase())"/>
                 </p>
             </form>
         </div>

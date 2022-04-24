@@ -1,6 +1,6 @@
-﻿const filterByVideoName = function() {
-    let userText = document.getElementsByTagName('input');
-    let filter = userText[0].value.toLowerCase();
+﻿function filterByVideoName(filter) {
+    //let userText = document.getElementsByTagName('input');
+    //let filter = userText[0].value.toLowerCase();
     let elements = document.getElementsByClassName('video-container');
     // Пробежимся в цикле по контейнерам
     for (let i = 0; i <= elements.length; i++) {
@@ -17,7 +17,7 @@
     }
 }
 
-const checkClientAge = function() {
+function checkClientAge() {
     alert("Приветствуем на LifeSpot! " +
         new Date().toLocaleString());
     let userData = new Map();
