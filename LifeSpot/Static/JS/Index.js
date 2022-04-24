@@ -31,7 +31,12 @@ function checkClientAge() {
         window.location.href = "http://www.google.com";
     }
 
+    return userData;
+}
+
+function printSession(userData) {
     console.log('browserData:' + userData.get('browserData'));
     console.log('dateTime:' + userData.get('dateTime'));
     console.log('userAge:' + userData.get('userAge'));
 }
+
