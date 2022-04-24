@@ -1,4 +1,4 @@
-﻿function filterByVideoName(filter) {
+﻿function filterByVideoName(inputParseFunction) {
     //let userText = document.getElementsByTagName('input');
     //let filter = userText[0].value.toLowerCase();
     let elements = document.getElementsByClassName('video-container');
@@ -12,7 +12,7 @@
         let videoDescription = childElements.getElementsByTagName('h3')[0];
         // Выведем его текст на консоль
         //console.log(videoDescription.innerText);
-        if (videoDescription.innerText.toLowerCase().includes(filter)) { videoDescription.parentNode.style.display = 'inline-block'; }
+        if (videoDescription.innerText.toLowerCase().includes(inputParseFunction())) { videoDescription.parentNode.style.display = 'inline-block'; }
         else { videoDescription.parentNode.style.display = 'none'; }
     }
 }
@@ -40,3 +40,8 @@ function printSession(userData) {
     console.log('userAge:' + userData.get('userAge'));
 }
 
+
+
+const inputParseFunction = function () {
+    return document.getElementsByTagName('input')[0].value.toLowerCase();
+}
