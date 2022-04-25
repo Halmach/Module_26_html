@@ -1,4 +1,4 @@
-﻿function filterByVideoName(inputParseFunction) {
+﻿function filterByVideoName() {
     //let userText = document.getElementsByTagName('input');
     //let filter = userText[0].value.toLowerCase();
     let elements = document.getElementsByClassName('video-container');
