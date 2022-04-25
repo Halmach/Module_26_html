@@ -47,7 +47,7 @@ function printSession() {
 checkAge();
 handleSession();
 printSession();
-
+setTimeout(function () { alert('Подписывайтесь на наш инстаграмм'); }, 60000)
 
 const inputParseFunction = function () {
     return document.getElementsByTagName('input')[0].value.toLowerCase();
