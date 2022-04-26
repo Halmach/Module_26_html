@@ -39,7 +39,7 @@ footer {
     color: dimgrey;
     /* Задание 27.6.3 */
     line-height: 66%;
-    padding-left: 8%; /* Задание 27.7.3*/
+    padding-left: 1%; /* Задание 27.7.3*/
 }
 
 .search {
@@ -77,4 +77,22 @@ header, footer, .main-content, body {
 
 body {
     padding-left: 11%;
+}
+
+.reviews-container,.review-button {
+    display:inline-block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.review-button {
+    display: block;
+}
+
+.review-text {
+    display: block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
 }
