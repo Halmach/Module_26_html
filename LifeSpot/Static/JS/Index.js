@@ -20,34 +20,50 @@
 let userData = {};
 
 function checkAge() {
-    let age = prompt('Введите возраст:');
-    userData['userAge'] = age;
-    if (age >= 18) alert('Добро пожаловать!');
-    else {
-        alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
-        window.location.href = "http://www.google.com";
-    }
+
+
 }
 
 function handleSession() {
-    alert("Приветствуем на LifeSpot! " +
-        new Date().toLocaleString());
-    userData['browserData'] = window.navigator.userAgent;
-    userData['dateTime'] = new Date().toLocaleString();
+
 }
 
 function printSession() {
-    console.log('browserData:' + userData['browserData']);
-    console.log('dateTime:' + userData['dateTime']);
-    console.log('userAge:' + userData['userAge']);
+    console.log('browserData:' + sessionStorage.getItem('browserData'));
+    console.log('dateTime:' + sessionStorage.getItem('dateTime'));
+    console.log('userAge:' + sessionStorage.getItem('userAge'));
+}
+
+function checkSession() {
+
+    let age = sessionStorage.getItem('userAge');
+
+    if (age == null) {
+        age = prompt('Введите возраст:');
+
+        if (age >= 18) {
+            sessionStorage.setItem('userAge', age);
+
+            alert('Добро пожаловать!');
+
+            alert("Приветствуем на LifeSpot!");
+
+            sessionStorage.setItem('browserData', window.navigator.userAgent);
+            sessionStorage.setItem('dateTime', new Date().toLocaleString());
+            setTimeout(function () { alert('Подписывайтесь на наш инстаграмм'); }, 60000)
+        }
+        else {
+            alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
+            window.location.href = "http://www.google.com";
+        }
+    }
+
+    printSession();
 }
 
 
+checkSession();
 
-checkAge();
-handleSession();
-printSession();
-setTimeout(function () { alert('Подписывайтесь на наш инстаграмм'); }, 60000)
 
 const inputParseFunction = function () {
     return document.getElementsByTagName('input')[0].value.toLowerCase();
