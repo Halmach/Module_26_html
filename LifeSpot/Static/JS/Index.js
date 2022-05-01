@@ -19,14 +19,6 @@
 
 let userData = {};
 
-function checkAge() {
-
-
-}
-
-function handleSession() {
-
-}
 
 function printSession() {
     console.log('browserData:' + sessionStorage.getItem('browserData'));

@@ -1,26 +1,41 @@
 ﻿
 
 let GetReviewFromUser = function () {
-    let reviews = new Map();
+
+    let comment =  { };
 
     let name = prompt('Введите ваше имя:');
-    reviews.set('name', name);
+    comment['name'] =  name;
 
     let review = prompt('Введите текст комментария:');
-    reviews.set('review', review);
+    comment['review'] = review;
 
-    reviews.set('date', new Date().toLocaleString());
+    comment['date'] = new Date().toLocaleString();
 
-    return reviews;
+    result = confirm('Хотите чтобы ваш комментарий оценили другие пользователи ?');
+
+    if (result) {
+        let review = Object.create(comment);
+        review.rate = 0;
+
+        return review;
+    }
+    else return comment;
 }
 
-let InsertReviewIntoReviewsContaiver = reviews => {
+let InsertReviewIntoReviewsContaiver = review => {
     let elem = document.getElementsByClassName('reviews-container')[0];
+
     elem.innerHTML += '<div class="review-text">';
-    elem.innerHTML += '<p>';
-    elem.innerHTML += 'Дата: ' + reviews.get('date') + '<br>';
-    elem.innerHTML += 'Пользователь: ' + reviews.get('name') + '<br>';
-    elem.innerHTML += 'Комментарий: ' + reviews.get('review') + '<br>';
+
+    if (review.hasOwnProperty('rate')) {
+        elem.innerHTML += '<p>';
+        elem.innerHTML += 'Рейтинг: ' + review['rate'] + '<br>';
+    }
+    
+    elem.innerHTML += 'Дата: ' + review['date'] + '<br>';
+    elem.innerHTML += 'Пользователь: ' + review['name'] + '<br>';
+    elem.innerHTML += 'Комментарий: ' + review['review'] + '<br>';
     elem.innerHTML += '</p>';
     elem.innerHTML += '</div>';
 }
