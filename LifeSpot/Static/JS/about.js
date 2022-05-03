@@ -1,16 +1,18 @@
-﻿
+﻿function CreateComment(name, review) {
+    this.name = name,
+    this.review = review,
+    this.date = new Date().toLocaleString()
+}
 
 let GetReviewFromUser = function () {
 
-    let comment =  { };
-
     let name = prompt('Введите ваше имя:');
-    comment['name'] =  name;
+    //comment['name'] =  name;
 
     let review = prompt('Введите текст комментария:');
-    comment['review'] = review;
+    //comment['review'] = review;
 
-    comment['date'] = new Date().toLocaleString();
+    let comment = new CreateComment(name, review);
 
     result = confirm('Хотите чтобы ваш комментарий оценили другие пользователи ?');
 
