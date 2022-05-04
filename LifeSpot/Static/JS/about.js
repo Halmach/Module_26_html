@@ -25,6 +25,19 @@ let GetReviewFromUser = function () {
     else return comment;
 }
 
+function addLike(Id) {
+
+    let button = document.getElementById(Id);
+
+    let array = button.innerText.split(' ');
+
+    let rate = parseInt(array[array.length - 1], 10);
+
+    array[array.length - 1] = ++rate;
+
+    button.innerText = array.join(' ');
+}
+
 let InsertReviewIntoReviewsContaiver = review => {
     let elem = document.getElementsByClassName('reviews-container')[0];
 
@@ -32,7 +45,8 @@ let InsertReviewIntoReviewsContaiver = review => {
 
     if (review.hasOwnProperty('rate')) {
         elem.innerHTML += '<p>';
-        elem.innerHTML += 'Рейтинг: ' + review['rate'] + '<br>';
+        elem.innerHTML += 'Рейтинг: ' + '<button id="' + Math.random() + '" onclick =' + "addLike(this.id)" + '>' + '❤️ ' + review['rate'] + '</button>' + '<br>';
+        
     }
     
     elem.innerHTML += 'Дата: ' + review['date'] + '<br>';
