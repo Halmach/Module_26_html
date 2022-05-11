@@ -49,6 +49,7 @@ namespace LifeSpot
         /// </summary>
         public static void MapHtml(this IEndpointRouteBuilder builder)
         {
+            string sliderHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "slider.html"));
             string footerHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "footer.html"));
             string sideBarHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "sidebar.html"));
 
@@ -83,6 +84,7 @@ namespace LifeSpot
 
                 // Загружаем шаблон страницы, вставляя в него элементы
                 var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
+                    .Replace("<!--SLIDER-->", sliderHtml)
                     .Replace("<!--SIDEBAR-->", sideBarHtml)
                     .Replace("<!--FOOTER-->", footerHtml);
 
