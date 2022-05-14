@@ -26,6 +26,27 @@ namespace LifeSpot
             }
         }
 
+        public static void MapImages(this IEndpointRouteBuilder builder)
+        {
+            var imageFiles = new[] { "london.jpg", "ny.jpg", "spb.jpg" };
+
+            foreach (var fileName in imageFiles)
+            {
+                builder.MapGet($"/images/{fileName}", async context =>
+                {
+                    var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "images", fileName);
+                    await context.Response.SendFileAsync(imagePath);
+                });
+            }
+
+            //builder.MapGet("/images/london.jpg", async context =>
+            //{
+            //    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "images", "london.jpg");
+            //    // Загружаем шаблон страницы, вставляя в него элементы
+            //    await context.Response.SendFileAsync(viewPath);
+            //});
+        }
+
         /// <summary>
         ///  Маппинг JS
         /// </summary>
